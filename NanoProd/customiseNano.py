@@ -30,6 +30,12 @@ def nanoAOD_addDeepInfoAK4CHS(process, addDeepBTag, addDeepFlavour, addParticleN
   process.updatedJets.jetSource="selectedUpdatedPatJetsWithDeepInfo"
   return process
 
+
+def customise_hbw(process):
+  # TODO; this function will need to be added in `config.overseer_cfg.yaml` when finished
+  return process
+
+
 def customise(process):
   process.MessageLogger.cerr.FwkReport.reportEvery = 100
   process.finalGenParticles.select = cms.vstring(

@@ -1,0 +1,17 @@
+GLOBAL:
+  era: Run2_2017
+  nanoVersion: v11
+  remoteBases:
+    mathis_v2: gsiftp://dcache-door-cms04.desy.de//pnfs/desy.de/cms/tier2/store/user/mfrahm/crab_nano_v11_v2
+  
+WJetsToLNu_HT-2500ToInf:
+  miniAOD: /WJetsToLNu_HT-2500ToInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM
+  sampleType: mc
+  remoteBase: mathis_v2
+  
+# TTToSemiLeptonic:
+#  miniAOD: /TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM
+#   sampleType: mc
+# GluGluToHHTo2B2VLNu2J_node_cHHH1:
+#   miniAOD: /GluGluToHHTo2B2VLNu2J_node_cHHH1_TuneCP5_PSWeights_13TeV-powheg-pythia8/RunIIFall17MiniAODv2-PU2017_12Apr2018_94X_mc2017_realistic_v14-v1/MINIAODSIM
+#   sampleType: mc
