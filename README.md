@@ -1,11 +1,12 @@
-# HH -> bbtautau Framework
+# HH -> bbww Framework
+# **Work In Progress!**
 
 ## How to install
 
 **Please note the name at the end of the clone command!**
 
 ```sh
-git clone --recursive git@github.com:uhh-cms/cms-hh-bbtautau-pisa-Framework.git Framework
+git clone --recursive git@github.com:mafrahm/hh-bbww-pisa-Framework.git Framework
 ```
 
 ## Loading environment
