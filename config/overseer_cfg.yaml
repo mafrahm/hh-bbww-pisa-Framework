@@ -1,6 +1,6 @@
 cmsswPython: RunKit/nanoProdWrapper.py
 params:
-  customise: Framework/NanoProd/customiseNano.customise
+  customise: Framework/NanoProd/customiseNano.customise_hbw
   skimCfg: skim.yaml
   maxEvents: -1
 splitting: FileBased
@@ -26,10 +26,10 @@ filesToTransfer:
   - Common/TextIO.h
 
 # Update destination site and paths before launching a production
-#site: T3_CH_CERNBOX
-#crabOutput: /store/user/kandroso/bbtt-prod
-#localCrabOutput: /eos/home-k/kandroso/bbtt-prod
-#finalOutput: /eos/home-p/kandroso/bbtt/nanoV10
+site: T2_DE_DESY
+crabOutput: /store/user/mfrahm/crab_nano_v11
+localCrabOutput: /eos/home-m/mfrahm/nano_v11/crab_output
+finalOutput: /eos/home-m/mfrahm/nano_v11
 
 maxMemory: 2500
 numCores: 1

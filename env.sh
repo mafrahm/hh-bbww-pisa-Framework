@@ -35,7 +35,7 @@ action() {
     else
         export SCRAM_ARCH=el8_amd64_gcc10
     fi
-    CMSSW_VER=CMSSW_12_4_8
+    CMSSW_VER=CMSSW_12_4_12
     if ! [ -f "$this_dir/soft/CentOS$os_version/$CMSSW_VER/.installed" ]; then
         run_cmd mkdir -p "$this_dir/soft/CentOS$os_version"
         run_cmd cd "$this_dir/soft/CentOS$os_version"
@@ -48,6 +48,8 @@ action() {
         run_cmd scramv1 project CMSSW $CMSSW_VER
         run_cmd cd $CMSSW_VER/src
         run_cmd eval `scramv1 runtime -sh`
+	run_cms git cms-init -y
+	run_cmd git cms-merge-topic Sam-Harper:L1Nano_12410
         run_cmd mkdir -p Framework/NanoProd/
         run_cmd ln -s "$this_dir/NanoProd" Framework/NanoProd/python  
         run_cmd mkdir -p HHTools

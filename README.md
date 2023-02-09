@@ -2,7 +2,7 @@
 
 ## How to install
 ```sh
-git clone --recursive git@github.com:cms-hh-bbtautau/Framework.git
+git clone --recursive git@github.com:mafrahm/hh-bbww-pisa-Framework.git
 ```
 
 ## Loading environment
@@ -23,12 +23,12 @@ Production should be run on the server that have the crab stageout area mounted 
 
 1. Create crab configs
    ```sh
-   python3 NanoProd/createCrabConfigs.py --samples config/samples_2018.yaml --output crab/Run2_2018
+   python3 NanoProd/createCrabConfigs.py --samples config/samples_2017_hbw.yaml --output crab/Run2_2017
    ```
 
 1. Check that all datasets are present and valid:
    ```sh
-   cat crab/Run2_2018/all_samples.txt| xargs python3 RunKit/checkDatasetExistance.py
+   cat crab/Run2_2017/all_samples.txt| xargs python3 RunKit/checkDatasetExistance.py
    ```
 
 1. Modify output and other site-specific settings in `config/overseer_cfg.yaml`. In particular:
@@ -40,7 +40,7 @@ Production should be run on the server that have the crab stageout area mounted 
 
 1. Test that the code works locally (take one of the miniAOD files as an input). E.g.
    ```sh
-   python3 RunKit/nanoProdWrapper.py customise=Framework/NanoProd/customiseNano.customise skimCfg=config/skim.yaml maxEvents=100 sampleType=mc storeFailed=True era=Run2_2018 inputFiles=file:/eos/cms/store/group/phys_tau/kandroso/miniAOD_UL18/TTToSemiLeptonic.root
+   python3 RunKit/nanoProdWrapper.py customise=Framework/NanoProd/customiseNano.customise_hbw skimCfg=config/skim.yaml maxEvents=100 sampleType=mc storeFailed=True era=Run2_2018 inputFiles=file:/eos/cms/store/group/phys_tau/kandroso/miniAOD_UL18/TTToSemiLeptonic.root
    ./RunKit/nanoProdCrabJob.sh
    ```
    - check that output file `nano.root` is created correctly
@@ -64,9 +64,9 @@ Production should be run on the server that have the crab stageout area mounted 
 1. Submit tasks using `RunKit/crabOverseer.py` and monitor the process.
    It is recommended to run `crabOverseer` in screen.
    ```sh
-   python3 RunKit/crabOverseer.py --cfg config/overseer_cfg.yaml crab/Run2_2018/FILE1.yaml crab/Run2_2018/FILE2.yaml ...
+   python3 RunKit/crabOverseer.py --cfg config/overseer_cfg.yaml crab/Run2_2017/FILE1.yaml crab/Run2_2017/FILE2.yaml ...
    ```
-   - Use `crab/Run2_2018/*.yaml` to submit all the tasks
+   - Use `crab/Run2_2017/*.yaml` to submit all the tasks
    - For more information about available command line arguments run `python3 RunKit/crabOverseer.py --help`
    - For consecutive runs, if there are no modifications in the configs, it is enough to run `crabOverseer` without any arguments:
      ```sh
