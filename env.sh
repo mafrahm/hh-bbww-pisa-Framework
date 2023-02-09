@@ -45,6 +45,7 @@ action() {
             run_cmd rm -f "$this_dir/soft/CentOS$os_version/bin/python"
         fi
         echo "Creating $CMSSW_VER area for CentOS$os_version in $PWD ..."
+	run_cmd git cms-merge-topic Sam-Harper:L1Nano_12410
         run_cmd scramv1 project CMSSW $CMSSW_VER
         run_cmd cd $CMSSW_VER/src
         run_cmd eval `scramv1 runtime -sh`

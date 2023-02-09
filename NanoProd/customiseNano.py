@@ -32,6 +32,7 @@ def nanoAOD_addDeepInfoAK4CHS(process, addDeepBTag, addDeepFlavour, addParticleN
 
 
 def customise_hbw(process):
+  process.nanoTableTaskCommon.add(process.l1TablesTask)
   # TODO; this function will need to be added in `config.overseer_cfg.yaml` when finished
   return process
 
