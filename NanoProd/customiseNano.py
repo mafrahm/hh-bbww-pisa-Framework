@@ -4,6 +4,8 @@ from PhysicsTools.NanoAOD.common_cff import Var
 from PhysicsTools.PatAlgos.tools.jetTools import updateJetCollection
 from RecoBTag.ONNXRuntime.pfParticleNetAK4_cff import _pfParticleNetAK4JetTagsAll
 from PhysicsTools.NanoAOD.custom_jme_cff import AddParticleNetAK4Scores
+from PhysicsTools.NanoAOD.l1trig_cff import l1TablesTask
+
 
 def nanoAOD_addDeepInfoAK4CHS(process, addDeepBTag, addDeepFlavour, addParticleNet):
   _btagDiscriminators=[]

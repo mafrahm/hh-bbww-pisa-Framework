@@ -35,7 +35,8 @@ action() {
     else
         export SCRAM_ARCH=el8_amd64_gcc10
     fi
-    CMSSW_VER=CMSSW_12_6_0_patch1
+    # CMSSW_VER=CMSSW_12_6_0_patch1
+    CMSSW_VER=CMSSW_12_4_12
     if ! [ -f "$this_dir/soft/CentOS$os_version/$CMSSW_VER/.installed" ]; then
         run_cmd mkdir -p "$this_dir/soft/CentOS$os_version"
         run_cmd cd "$this_dir/soft/CentOS$os_version"
@@ -45,10 +46,11 @@ action() {
             run_cmd rm -f "$this_dir/soft/CentOS$os_version/bin/python"
         fi
         echo "Creating $CMSSW_VER area for CentOS$os_version in $PWD ..."
-	run_cmd git cms-merge-topic Sam-Harper:L1Nano_12410
         run_cmd scramv1 project CMSSW $CMSSW_VER
         run_cmd cd $CMSSW_VER/src
-        run_cmd eval `scramv1 runtime -sh`
+	run_cmd eval `scramv1 runtime -sh`
+	run_cms git cms-init -y
+	run_cmd git cms-merge-topic Sam-Harper:L1Nano_12410
         # clone repos
         run_cmd git clone ssh://git@gitlab.cern.ch:7999/akhukhun/roccor.git RoccoR
         run_cmd git clone git@github.com:SVfit/ClassicSVfit.git TauAnalysis/ClassicSVfit -b fastMTT_19_02_2019
